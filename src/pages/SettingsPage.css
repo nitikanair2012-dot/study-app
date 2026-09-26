@@ -1,0 +1,253 @@
+.settings-page {
+  width: 100%;
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #192638;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: #758bb8;
+  font-size: 16px;
+}
+
+.settings-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.settings-section {
+  padding: 28px;
+}
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.section-header p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.setting-label span {
+  font-weight: 500;
+  color: #1f2937;
+  font-size: 15px;
+}
+
+.setting-label small {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.setting-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Toggle Switch */
+.toggle {
+  width: 52px;
+  height: 28px;
+  border-radius: 14px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  padding: 2px;
+}
+
+.toggle.active {
+  background: var(--color-primary, #a855f7);
+}
+
+.toggle-slider {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: left 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle.active .toggle-slider {
+  left: 26px;
+}
+
+/* Time Picker */
+.time-picker-container {
+  margin: 20px 0;
+  padding: 16px;
+  background: var(--color-light, #b899b0);
+  border-radius: 12px;
+}
+
+.time-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.time-display span {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.time-input-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.time-input {
+  padding: 10px 14px;
+  border: 2px solid var(--color-primary, #a855f7);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.time-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+}
+
+.reminder-info {
+  margin-top: 16px;
+  padding: 12px;
+  background: #eff6ff;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 4px;
+}
+
+.reminder-info p {
+  font-size: 13px;
+  color: #075985;
+  margin: 0;
+}
+
+/* Calendar Section */
+.calendar-section {
+  grid-column: 1 / -1;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.stat {
+  padding: 20px;
+  background: var(--color-light, #f3e8ff);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary, #fcb3d7);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Dark mode support */
+body.dark-mode .page-header h1,
+body.dark-mode .section-header h2,
+body.dark-mode .setting-label span {
+  color: #f1f5f9;
+}
+
+body.dark-mode .page-header p,
+body.dark-mode .section-header p,
+body.dark-mode .setting-label small {
+  color: #9ca3af;
+}
+
+body.dark-mode .setting-item {
+  border-bottom-color: #374151;
+}
+
+body.dark-mode .toggle {
+  background: #4b5563;
+}
+
+body.dark-mode .time-picker-container {
+  background: rgba(168, 85, 247, 0.15);
+}
+
+body.dark-mode .time-input {
+  background: #1f2937;
+  color: #f1f5f9;
+  border-color: var(--color-primary, #e08fbc);
+}
+
+body.dark-mode .stat {
+  background: rgba(168, 85, 247, 0.15);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .settings-section {
+    padding: 20px;
+  }
+
+  .time-display {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

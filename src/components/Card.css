@@ -1,0 +1,74 @@
+.card {
+  background: linear-gradient(135deg, #fefdfb 0%, #faf8f5 100%);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 
+    0 2px 8px rgba(90, 74, 66, 0.08),
+    0 4px 12px rgba(132, 141, 93, 0.04),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(212, 165, 116, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle paper texture */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(212, 165, 116, 0.02) 2px,
+      rgba(212, 165, 116, 0.02) 4px
+    );
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover {
+  box-shadow: 
+    0 4px 16px rgba(90, 74, 66, 0.12),
+    0 8px 24px rgba(132, 141, 93, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  transform: translateY(-4px);
+  border-color: rgba(212, 165, 116, 0.2);
+}
+
+.card.interactive {
+  cursor: pointer;
+}
+
+.card.interactive:active {
+  transform: translateY(-2px);
+}
+
+/* Dark mode support */
+body.dark-mode .card {
+  background: linear-gradient(135deg, #2a2a2a 0%, #323232 100%);
+  color: #f1f5f9;
+  border-color: rgba(212, 165, 116, 0.15);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .card:hover {
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.05);
+  border-color: rgba(212, 165, 116, 0.25);
+}

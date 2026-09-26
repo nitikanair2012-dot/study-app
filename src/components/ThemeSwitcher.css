@@ -1,0 +1,145 @@
+.theme-switcher {
+  position: relative;
+}
+
+.theme-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--color-light, #FDEEF0), rgba(255, 255, 255, 0.8));
+  border: 2px solid var(--color-primary, #F8DCD9);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-dark, #8B6B65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 
+    0 2px 8px rgba(132, 141, 93, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  font-family: 'Geneva', 'Trebuchet MS', sans-serif;
+}
+
+.theme-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 12px rgba(132, 141, 93, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, var(--color-primary, #F8DCD9), var(--color-accent, #D4A8A0));
+  color: #5a4a42;
+}
+
+.theme-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: linear-gradient(135deg, #fefdfb 0%, #faf8f5 100%);
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 24px rgba(90, 74, 66, 0.15),
+    0 2px 8px rgba(132, 141, 93, 0.08);
+  z-index: 1000;
+  padding: 12px;
+  min-width: 220px;
+  animation: slideDown 0.2s ease;
+  border: 1px solid rgba(212, 165, 116, 0.1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  text-align: left;
+  font-family: 'Cascadia Code', 'Segoe UI', sans-serif;
+}
+
+.theme-option:hover {
+  background: rgba(212, 165, 116, 0.08);
+  transform: translateX(4px);
+  border-color: rgba(212, 165, 116, 0.2);
+}
+
+.theme-option.active {
+  border-color: var(--color-primary, #F8DCD9);
+  background: linear-gradient(135deg, rgba(248, 220, 217, 0.2), rgba(255, 255, 255, 0.4));
+  font-weight: 600;
+}
+
+.theme-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #5a4a42;
+  letter-spacing: 0.3px;
+  font-family: 'Cascadia Code', 'Segoe UI', sans-serif;
+}
+
+.theme-preview {
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  box-shadow: 
+    0 2px 4px rgba(90, 74, 66, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+/* Dark mode support */
+body.dark-mode .theme-button {
+  background: #3a3a3a;
+  border-color: #474C80;
+  color: #b8b8b8;
+}
+
+body.dark-mode .theme-button:hover {
+  background: #474C80;
+  color: #fefdfb;
+  box-shadow: 
+    0 4px 12px rgba(71, 76, 128, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .theme-menu {
+  background: linear-gradient(135deg, #2a2a2a 0%, #323232 100%);
+  border-color: rgba(212, 165, 116, 0.15);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .theme-option {
+  color: #f1f5f9;
+}
+
+body.dark-mode .theme-name {
+  color: #f1f5f9;
+}
+
+body.dark-mode .theme-option:hover {
+  background: rgba(212, 165, 116, 0.12);
+}
+
+body.dark-mode .theme-option.active {
+  background: linear-gradient(135deg, rgba(71, 76, 128, 0.3), rgba(255, 255, 255, 0.05));
+  border-color: #474C80;
+}

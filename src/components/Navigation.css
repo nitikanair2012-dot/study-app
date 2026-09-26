@@ -1,0 +1,188 @@
+.navigation {
+  background: linear-gradient(135deg, #fefdfb 0%, #faf8f5 100%);
+  box-shadow: 
+    0 2px 8px rgba(90, 74, 66, 0.08),
+    0 4px 12px rgba(132, 141, 93, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-primary, #F8DCD9);
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
+  font-family: 'Geneva', 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(212, 165, 116, 0.1);
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+  text-shadow: 0 4px 8px rgba(212, 165, 116, 0.2);
+}
+
+.logo-emoji {
+  font-size: 28px;
+  display: inline-block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #8b7355;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 4px 0;
+  font-family: 'Cascadia Code', 'Segoe UI', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.nav-link:hover {
+  color: var(--color-primary, #F8DCD9);
+}
+
+.nav-link.active {
+  color: var(--color-primary, #F8DCD9);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary, #F8DCD9), var(--color-accent, #D4A8A0));
+  border-radius: 2px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.account-button {
+  background: linear-gradient(135deg, var(--color-light, #FDEEF0), rgba(255, 255, 255, 0.8));
+  border: 2px solid var(--color-primary, #F8DCD9);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--color-dark, #8B6B65);
+}
+
+.account-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(132, 141, 93, 0.2);
+  background: linear-gradient(135deg, var(--color-primary, #F8DCD9), var(--color-accent, #D4A8A0));
+  color: #5a4a42;
+}
+
+.account-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+/* Dark mode support */
+body.dark-mode .navigation {
+  background: linear-gradient(135deg, #2a2a2a 0%, #323232 100%);
+  border-bottom-color: rgba(212, 165, 116, 0.15);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .nav-logo {
+  color: #EEEBDA;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .nav-logo:hover {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .nav-link {
+  color: #b8b8b8;
+}
+
+body.dark-mode .nav-link:hover {
+  color: #EEEBDA;
+}
+
+body.dark-mode .nav-link.active {
+  color: #EEEBDA;
+}
+
+body.dark-mode .account-button {
+  background: #3a3a3a;
+  border-color: #474C80;
+  color: #b8b8b8;
+}
+
+body.dark-mode .account-button:hover {
+  background: #474C80;
+  color: #fefdfb;
+  box-shadow: 0 4px 12px rgba(71, 76, 128, 0.3);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    font-size: 12px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+}
